@@ -16,6 +16,8 @@ When I connect Domo to Salesforce, my data, particularly Salesforce's 'Descripti
 
 The Knowledge Base article provides a script intended to be copy-pasted by end-users into the Python Scripting tile to produce a dataset usable by the Word Cloud Chart but, since it's off-limits to me, I decided to repurpose it to fit my needs.
 
+For demonstration purposes, I have included a fake dataset based on what someone might export out of Salesforce: `mock salesforce data.csv`. This file contains extra fields that one might expect in a Salesforce report, but we only really care about one: 'Description'. For the purposes of demonstration, the fake data has been _Lorem Ipsum_-ified and reduced to 1000 rows.
+
 # Step-by-step explanation
 The code reads data from a CSV file, processes the 'description' column by splitting it into words and filtering out common words and symbols based on the boolean variables. The result is aggregated to count the occurrences of each word and displayed as the first 100 rows. Finally, the aggregated data is saved to a CSV file.  The CSV file can be uploaded into any BI/visualization tool to create a Word Cloud, for example. 
 
