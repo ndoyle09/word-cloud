@@ -21,6 +21,8 @@ For demonstration purposes, I have included a fake dataset based on what someone
 # Step-by-step explanation
 The code reads data from a CSV file, processes the 'description' column by splitting it into words and filtering out common words and symbols based on the boolean variables. The result is aggregated to count the occurrences of each word and displayed as the first 100 rows. Finally, the aggregated data is saved to a CSV file.  The CSV file can be uploaded into any BI/visualization tool to create a Word Cloud, for example. 
 
+![Word Cloud in Tableau](WordCloud.png)
+
 ## 1. Importing pandas module
 ```python
 import pandas as pd
