@@ -1,4 +1,4 @@
-import pandas
+import pandas as pd
 
 removeCommonWords = True  ## (True or False)
 removeCommonSymbols = True  ## (True or False)
@@ -31,10 +31,9 @@ commonSymbols = ['~', '`', '!', '@', '#', '£', '€', '$', '¢', '¥', '§', '%
                  '+', '=', '{', '}', '[', ']', '|', '\\', '/', ':', ';', "'", ',', '<', '>', '.', '?', '“', '”', '-',
                  '–', '’', '"', '\n', ' ', '\r', '\t']
 
-from pandas import *
 
 # read data from inputs into a data frame
-cases = read_csv('cases_description.csv')  ## SET TO YOUR TABLE NAME
+cases = pd.read_csv('cases_description.csv')  ## SET TO YOUR TABLE NAME
 
 # write your script here
 tempOutput = []
