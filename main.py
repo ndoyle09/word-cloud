@@ -33,7 +33,7 @@ commonSymbols = ['~', '`', '!', '@', '#', '£', '€', '$', '¢', '¥', '§', '%
 
 
 # read data from inputs into a data frame
-cases = pd.read_csv('cases_description.csv')  ## SET TO YOUR TABLE NAME
+cases = pd.read_csv('mock salesforce data.csv')  ## SET TO YOUR TABLE NAME
 
 # write your script here
 tempOutput = []
@@ -46,21 +46,18 @@ for i, row in enumerate(descriptions):
             for symbol in commonSymbols:
                 word = word.replace(symbol, "")
         if removeCommonWords and word.upper() not in commonWords:
-            newData = {"id": cases['id'][i],
+            newData = {"id": cases['case number'][i],
                        "word": word.lower()}
             tempOutput.append(newData)
         elif not removeCommonWords:
-            newData = {"id": cases['id'][i],
+            newData = {"id": cases['case number'][i],
                        "word": word.lower()}
             tempOutput.append(newData)
 
-output = pandas.DataFrame(tempOutput)
+output = pd.DataFrame(tempOutput)
 
 wordcount = output.groupby('word').nunique().sort_values(by='id', ascending=False).rename(columns={'word': 'word',
                                                                                                    'id': 'occurrence'})
-
-# print(output.head(100))
 print(wordcount.head(100))
-# print(type(output))
 
 wordcount.to_csv('output.csv')
