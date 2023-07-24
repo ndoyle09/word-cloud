@@ -35,7 +35,6 @@ commonSymbols = ['~', '`', '!', '@', '#', '£', '€', '$', '¢', '¥', '§', '%
 # read data from inputs into a data frame
 cases = pd.read_csv('mock salesforce data.csv')  ## SET TO YOUR TABLE NAME
 
-# write your script here
 tempOutput = []
 descriptions = cases["description"].dropna() ## SET TO YOUR COLUMN TO SPLIT
 
